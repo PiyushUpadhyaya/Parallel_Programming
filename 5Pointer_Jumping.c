@@ -11,7 +11,7 @@ int main(int argc, char*argv[])
     int input_size[size];
     for(i=0;i<size;i++)
     {
-        input_size[i] = (2*i + 1)%23;
+        input_size[i] = (2*i + 1)%871;
         if(i==1)
             input_size[1] = 1;
     }
