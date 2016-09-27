@@ -46,10 +46,10 @@ int main(int argc, char*argv[])
 	time_end = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
 	double result_parallel = time_end - time_start;
 	printf("\nParallel Time is %f\n",result_parallel);
-/*    for(i=0; i<13; i++)
+    for(i=0; i<13; i++)
     {
         printf("\t%d",input_size[i]);
-    }*/
+    }
     exit(0);
 }
 

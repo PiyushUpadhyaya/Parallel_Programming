@@ -22,7 +22,7 @@ int main(int argc, char*argv[])
     for(i=0; i<input_size; i++)
     {
         input[i] = i+1;
-        //printf("%d ",input[i]);
+        printf("%d ",input[i]);
         dummy[0][i] = input[i];
     }
     for(i=1; i<4; i++)
@@ -37,17 +37,14 @@ int main(int argc, char*argv[])
     time_start = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
     for(i=1; i<4; i++)
     {
-        #pragma omp parallel
-
-        {
+ 
             for(j=pow(2,i); j<=input_size; j = j + pow(2,i))
             {
                 dummy[i][j-1] = dummy[i-1][j-1] + dummy[i-1][j - (int)pow(2,i-1)-1];
 
             }
-        }
     }
-    /* for(i=0; i<4; i++)
+     for(i=0; i<4; i++)
     {
         for(j=0; j<8; j++)
         {
@@ -55,7 +52,7 @@ int main(int argc, char*argv[])
 
         }
             printf("\n");
-    }*/
+    }
     //down sweep
     int dummy2[8]= {0,0,0,0,0,0,0,0};
     int w;
@@ -74,13 +71,13 @@ int main(int argc, char*argv[])
     gettimeofday(&tv, 0);
     time_end = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
     double result_seq = time_end - time_start;
-    /* for(w = 0;w<8;w++)
+     for(w = 0;w<8;w++)
                  {
                      //dummy2[w] = dummy[i][w] + dummy2[w] + dummy2[j-1];
                       printf("%d ", dummy2[w]+dummy[0][w]);
                  }
 
-    */
+    
     printf("\nParallel Time is %f \n",result_seq);
 
     exit(0);

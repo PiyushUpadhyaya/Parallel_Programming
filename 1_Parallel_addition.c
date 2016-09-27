@@ -25,7 +25,7 @@ int main(int argc, char*argv[])
     for(i=0; i<input_size; i++)
     {
         input[i] = i+2;
-      //  printf("%f ",input[i]);
+        printf("%f ",input[i]);
     }
     gettimeofday(&tv, 0);
     time_start = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;

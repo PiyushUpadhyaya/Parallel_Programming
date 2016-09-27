@@ -25,12 +25,12 @@ int main(int argc, char*argv[])
 
     for(i=0; i<row_size; i++)
     {
-       // printf("\n");
+        printf("\n");
         matrix[i] = (float *)malloc(sizeof(float)*col_size);
         for(j=0; j<col_size; j++)
         {
             matrix[i][j] = i+2*j;
-         //   printf("%f  ",matrix[i][j]);
+            printf("%f  ",matrix[i][j]);
         }
     }
     trans_matrix = (float **)malloc(sizeof(float *) * col_size);
@@ -70,14 +70,14 @@ int main(int argc, char*argv[])
             }
     }
 
-  /* for(i=0; i<col_size; i++)
+   for(i=0; i<col_size; i++)
     {
         printf("\n");
         for(j=0; j<row_size; j++)
             {
                 printf("%f  ",trans_matrix[i][j]);
             }
-    }*/
+    }
     gettimeofday(&tv, 0);
     time_end = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
     double result_parallel = time_end - time_start;
